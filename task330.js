@@ -17,8 +17,8 @@ function getPerfectNumbers(n) {
 }
 
 function isPerfectNumber(num) {
-  let sumOfDivisors = 1;
-  for (let i = 2, half = Math.floor(num / 2); i <= half; i++) {
+  let sumOfDivisors = 0;
+  for (let i = 1, half = Math.floor(num / 2); i <= half; i++) {
     if (num % i === 0) {
       sumOfDivisors += i;
     }
