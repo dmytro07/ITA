@@ -1,12 +1,13 @@
 /* Дано натуральное число n.
- * б) Чему равна сумма его цифр?
+ * а) Сколько цифр в числе n.
  */
-
-function getSumOfDigits(n) {
+function countNumOfDigits(n) {
   let counter = 0;
   while (n !== 0) {
-    counter += n % 10;
     n = Math.floor(n / 10);
+    counter++;
   }
   return counter;
 }
+
+console.log(countNumOfDigits(100));

@@ -25,3 +25,5 @@ function isPerfectNumber(num) {
   }
   return num === sumOfDivisors;
 }
+
+console.log(getPerfectNumbers(9000));
