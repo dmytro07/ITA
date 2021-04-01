@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function isValidHtml(string) {
+      const tagArray = string.match(
+        /<h1>|<\/h1>|<h2>|<\/h2>|<h3>|<\/h3>|<p>|<\/p>|<a>|<\/a>|<span>|<\/span>/g
+      );
+      const res = tagArray.reduce((acc, item) => {
+        if (item.startsWith('</')) {
+          return acc + 1;
+        }
+        return acc - 1;
+      }, 0);
+      if (res === 0) return true;
+      return false;
+    }
+
+    console.log(isValidHtml('<h1>as<h2><span></span>dasd</h1>'));
+  </script>
+</html>
